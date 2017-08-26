@@ -1,0 +1,11 @@
+c:\users\jose\documents\visual studio 2015\Projects\Datos Empleados\Datos Empleados\bin\Debug\Datos Empleados.exe.config
+c:\users\jose\documents\visual studio 2015\Projects\Datos Empleados\Datos Empleados\bin\Debug\Datos Empleados.exe
+c:\users\jose\documents\visual studio 2015\Projects\Datos Empleados\Datos Empleados\bin\Debug\Datos Empleados.pdb
+c:\users\jose\documents\visual studio 2015\Projects\Datos Empleados\Datos Empleados\obj\Debug\Datos Empleados.csprojResolveAssemblyReference.cache
+c:\users\jose\documents\visual studio 2015\Projects\Datos Empleados\Datos Empleados\obj\Debug\Datos_Empleados.Properties.Resources.resources
+c:\users\jose\documents\visual studio 2015\Projects\Datos Empleados\Datos Empleados\obj\Debug\Datos Empleados.csproj.GenerateResource.Cache
+c:\users\jose\documents\visual studio 2015\Projects\Datos Empleados\Datos Empleados\obj\Debug\Datos Empleados.exe
+c:\users\jose\documents\visual studio 2015\Projects\Datos Empleados\Datos Empleados\obj\Debug\Datos Empleados.pdb
+C:\Users\Jose\Documents\Visual Studio 2015\Projects\Datos Empleados\Datos Empleados\bin\Debug\FirebirdSql.Data.FirebirdClient.dll
+C:\Users\Jose\Documents\Visual Studio 2015\Projects\Datos Empleados\Datos Empleados\bin\Debug\FirebirdSql.Data.FirebirdClient.pdb
+C:\Users\Jose\Documents\Visual Studio 2015\Projects\Datos Empleados\Datos Empleados\obj\Debug\Datos_Empleados.Principal.resources
