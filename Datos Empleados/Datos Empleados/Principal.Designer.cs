@@ -64,6 +64,11 @@
             this.CBXDepto = new System.Windows.Forms.ComboBox();
             this.BTNIdepartamentos = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel_puestos = new System.Windows.Forms.Panel();
+            this.BTNEpuesto = new System.Windows.Forms.Button();
+            this.BTNIpuesto = new System.Windows.Forms.Button();
+            this.DGVpuesto = new System.Windows.Forms.DataGridView();
+            this.CBXpuesto = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAempleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -76,6 +81,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGVcuentas)).BeginInit();
             this.panel_departamento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVIdepartamento)).BeginInit();
+            this.panel_puestos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVpuesto)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -91,7 +98,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(93, 428);
+            this.menuStrip1.Size = new System.Drawing.Size(93, 433);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -179,6 +186,7 @@
             this.agregarPuestoToolStripMenuItem.Name = "agregarPuestoToolStripMenuItem";
             this.agregarPuestoToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.agregarPuestoToolStripMenuItem.Text = "Agregar Puesto";
+            this.agregarPuestoToolStripMenuItem.Click += new System.EventHandler(this.agregarPuestoToolStripMenuItem_Click);
             // 
             // BTNIempleados
             // 
@@ -496,16 +504,83 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panel_puestos
+            // 
+            this.panel_puestos.Controls.Add(this.CBXpuesto);
+            this.panel_puestos.Controls.Add(this.DGVpuesto);
+            this.panel_puestos.Controls.Add(this.BTNIpuesto);
+            this.panel_puestos.Controls.Add(this.BTNEpuesto);
+            this.panel_puestos.Location = new System.Drawing.Point(106, 0);
+            this.panel_puestos.Name = "panel_puestos";
+            this.panel_puestos.Size = new System.Drawing.Size(808, 428);
+            this.panel_puestos.TabIndex = 7;
+            // 
+            // BTNEpuesto
+            // 
+            this.BTNEpuesto.Location = new System.Drawing.Point(13, 35);
+            this.BTNEpuesto.Name = "BTNEpuesto";
+            this.BTNEpuesto.Size = new System.Drawing.Size(184, 23);
+            this.BTNEpuesto.TabIndex = 0;
+            this.BTNEpuesto.Text = "Importar Puestos de Excel";
+            this.BTNEpuesto.UseVisualStyleBackColor = true;
+            this.BTNEpuesto.Click += new System.EventHandler(this.BTNEpuesto_Click);
+            // 
+            // BTNIpuesto
+            // 
+            this.BTNIpuesto.Location = new System.Drawing.Point(427, 37);
+            this.BTNIpuesto.Name = "BTNIpuesto";
+            this.BTNIpuesto.Size = new System.Drawing.Size(184, 23);
+            this.BTNIpuesto.TabIndex = 1;
+            this.BTNIpuesto.Text = "Agregar Puestos";
+            this.BTNIpuesto.UseVisualStyleBackColor = true;
+            this.BTNIpuesto.Click += new System.EventHandler(this.BTNIpuesto_Click);
+            // 
+            // DGVpuesto
+            // 
+            this.DGVpuesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVpuesto.Location = new System.Drawing.Point(13, 67);
+            this.DGVpuesto.Name = "DGVpuesto";
+            this.DGVpuesto.Size = new System.Drawing.Size(787, 352);
+            this.DGVpuesto.TabIndex = 2;
+            // 
+            // CBXpuesto
+            // 
+            this.CBXpuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBXpuesto.FormattingEnabled = true;
+            this.CBXpuesto.Items.AddRange(new object[] {
+            "FOLDUR",
+            "MORGET",
+            "GRUPO CONISAL",
+            "WIPSI",
+            "IT TELECOM",
+            "MORGET SEMANAL",
+            "MORGET CATORCENAL",
+            "MORGET QUINCENAL",
+            "MORGET MENSUAL",
+            "MORGET INTERNA",
+            "AICEL",
+            "NUBULA",
+            "CONSORCIO ATERAP SA DE CV",
+            "CROTEC SA DE CV",
+            "PEPSAT SA DE CV",
+            "INFORMATION THECNOLOGY",
+            "UPHETILOLI 2"});
+            this.CBXpuesto.Location = new System.Drawing.Point(203, 37);
+            this.CBXpuesto.Name = "CBXpuesto";
+            this.CBXpuesto.Size = new System.Drawing.Size(218, 21);
+            this.CBXpuesto.TabIndex = 3;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(917, 428);
-            this.Controls.Add(this.panel_departamento);
-            this.Controls.Add(this.panel_cuentas);
+            this.ClientSize = new System.Drawing.Size(918, 433);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panel_puestos);
+            this.Controls.Add(this.panel_departamento);
+            this.Controls.Add(this.panel_cuentas);
             this.Controls.Add(this.panel_salario);
             this.Controls.Add(this.panel_baja_empleados);
             this.Controls.Add(this.panel_alta_empleados);
@@ -526,6 +601,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGVcuentas)).EndInit();
             this.panel_departamento.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGVIdepartamento)).EndInit();
+            this.panel_puestos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVpuesto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -569,6 +646,11 @@
         private System.Windows.Forms.DataGridView DGVIdepartamento;
         private System.Windows.Forms.ComboBox CBXDepto;
         private System.Windows.Forms.Button BTNIdepartamentos;
+        private System.Windows.Forms.Panel panel_puestos;
+        private System.Windows.Forms.ComboBox CBXpuesto;
+        private System.Windows.Forms.DataGridView DGVpuesto;
+        private System.Windows.Forms.Button BTNIpuesto;
+        private System.Windows.Forms.Button BTNEpuesto;
     }
 }
 

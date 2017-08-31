@@ -22,6 +22,7 @@ namespace Datos_Empleados
         Msueldo_empleado sueldo = new Msueldo_empleado();
         Mcuentas cuentas = new Mcuentas();
         Mdepto_empleados depto = new Mdepto_empleados();
+        Mpuesto_empleados puesto = new Mpuesto_empleados();
 
 
 
@@ -47,6 +48,7 @@ namespace Datos_Empleados
             panel_salario.Visible = false;
             panel_cuentas.Visible = false;
             panel_departamento.Visible = false;
+            panel_puestos.Visible = false;
         }
 
         private void datosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -56,6 +58,7 @@ namespace Datos_Empleados
             panel_salario.Visible = false;
             panel_cuentas.Visible = false;
             panel_departamento.Visible = false;
+            panel_puestos.Visible = false;
         }
 
         private void bajaEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,6 +68,7 @@ namespace Datos_Empleados
             panel_salario.Visible = false;
             panel_cuentas.Visible = false;
             panel_departamento.Visible = false;
+            panel_puestos.Visible = false;
         }
 
 
@@ -75,6 +79,7 @@ namespace Datos_Empleados
             panel_baja_empleados.Visible = false;
             panel_cuentas.Visible = false;
             panel_departamento.Visible = false;
+            panel_puestos.Visible = false;
         }
 
         private void cuentasDeBancoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -84,6 +89,7 @@ namespace Datos_Empleados
             panel_alta_empleados.Visible = false;
             panel_baja_empleados.Visible = false;
             panel_departamento.Visible = false;
+            panel_puestos.Visible = false;
 
         }
 
@@ -94,7 +100,18 @@ namespace Datos_Empleados
             panel_salario.Visible = false;
             panel_alta_empleados.Visible = false;
             panel_baja_empleados.Visible = false;
+            panel_puestos.Visible = false;
 
+        }
+
+        private void agregarPuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel_departamento.Visible = false;
+            panel_cuentas.Visible = false;
+            panel_salario.Visible = false;
+            panel_alta_empleados.Visible = false;
+            panel_baja_empleados.Visible = false;
+            panel_puestos.Visible = true;
         }
 
         //Ingreso de empleados (revision correcta)
@@ -436,7 +453,7 @@ namespace Datos_Empleados
 
         }
 
-        //Departamentos
+        //Departamentos (revision correcta)
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -497,6 +514,72 @@ namespace Datos_Empleados
                 MessageBox.Show("Departamentos Agregados Correctamente ");
             }
             
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void BTNEpuesto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog openfile1 = new OpenFileDialog();
+                openfile1.Filter = "Excel Files |*.xlsx";
+                openfile1.Title = "Seleccione el archivo de Excel";
+                if (openfile1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    if (openfile1.FileName.Equals("") == false)
+                    {
+                        texto = openfile1.FileName;
+                    }
+                }
+
+                conn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;data source=" + texto + ";Extended Properties='Excel 12.0 Xml;HDR=Yes'");
+                OleDbDataAdapter MyDataAdapter = new OleDbDataAdapter("Select [Puesto],[clave],[Sueldo Diario],[Sueldo Diario Maximo]   from [puesto_empleado$]", conn);
+                dt = new DataTable();
+                MyDataAdapter.Fill(dt);
+                DGVpuesto .DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+
+        private void BTNIpuesto_Click(object sender, EventArgs e)
+        {
+            string conexion = CBXpuesto.Text;
+
+
+            string RC = puesto.conexiofinal(conexion);
+            try
+            {
+                foreach (DataGridViewRow row in DGVpuesto.Rows)
+                {
+                    var cell = row.Cells[0].Value;
+                    if (cell != null)
+                    {
+                        puesto.agregar_puesto(Convert.ToString(row.Cells[0].Value), Convert.ToString(row.Cells[2].Value), Convert.ToString(row.Cells[3].Value), RC);
+
+                        string puestoe = puesto.buscarRegistro(Convert.ToString(row.Cells[0].Value), RC);
+
+                        if (puestoe != "")
+                        {
+                            puesto.cargar_puesto(Convert.ToString(row.Cells[1].Value), puestoe, RC);
+                        }
+
+                        contador++;
+                    }
+
+                }
+
+                MessageBox.Show("Puestos Agregados Correctamente ");
+            }
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);

@@ -53,7 +53,8 @@
   <ItemGroup>
     <Compile Include="CambioSalario\Msueldo_empleado.cs" />
     <Compile Include="CuentasBanco\Mcuentas.cs" />
-    <Compile Include="Mdepto_empleados.cs" />
+    <Compile Include="AgegarDepartamento\Mdepto_empleados.cs" />
+    <Compile Include="Mpuesto_empleados.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,7 +101,6 @@
     <None Include="Resources\empleado.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AgegarDepartamento\" />
     <Folder Include="AgregarPuesto\" />
   </ItemGroup>
   <ItemGroup>
