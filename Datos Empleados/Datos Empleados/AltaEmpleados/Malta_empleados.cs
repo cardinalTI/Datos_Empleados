@@ -25,16 +25,10 @@ namespace Datos_Empleados
                 SqlConnection conexion = new SqlConnection();
                 conexion.ConnectionString = conexionSQL;
                 conexion.Open();
-                SqlCommand comando = new SqlCommand("delete from usuario", conexion);
-                if (comando.ExecuteNonQuery() == 1)
-                {
-                    MessageBox.Show("Conexion correcta");
-
-                }
-                else
-                {
-                    MessageBox.Show("Error al probar conexiòn");
-                }
+                string sql  = "delete from usuario";
+                SqlCommand comando = new SqlCommand(sql, conexion);
+                comando.ExecuteNonQuery();
+                conexion.Close();
             }
             catch (Exception ex )
             {
@@ -53,17 +47,10 @@ namespace Datos_Empleados
                 SqlConnection conexion = new SqlConnection();
                 conexion.ConnectionString = conexionSQL;
                 conexion.Open();
-                SqlCommand comando = new SqlCommand("insert into usuario (numero,nombres,apellido_paterno,apellido_materno,clave_puesto,clave_depto,clave_frecuencia_pago,num_reg_patronal,forma_pago,contrato,jornada,regimen_fiscal,fecha_ingreso,estatus,tipo_salario,salario_diario,salario_integrado,rfc,curp,registro_imss,direccion,cp,contrato_sat) values ('" + numero + "','" + nombre + "','" + apellido_paterno + "','" + apellido_materno + "','" + clave_puesto + "','" + clave_depto + "','" + clave_frecuencia_pago + "','" + num_reg_patronal + "','" + forma_pago + "','" + contrato + "','" + jornada + "','" + regimen_fiscal + "','" + fecha_ingreso + "','" + estatus + "','" + tipo_salario + "','" + salario_diario + "','" + salario_integrado + "','" + rfc + "','" + curp + "','" + registro_imss + "','" + direccion + "','" + cp + "','" + contratosat + "')");
-
-                if (comando.ExecuteNonQuery() == 1)
-                {
-                    MessageBox.Show("Conexion correcta");
-
-                }
-                else
-                {
-                    MessageBox.Show("Error al probar conexiòn");
-                }
+                string sql = "insert into usuario (numero,nombres,apellido_paterno,apellido_materno,clave_puesto,clave_depto,clave_frecuencia_pago,num_reg_patronal,forma_pago,contrato,jornada,regimen_fiscal,fecha_ingreso,estatus,tipo_salario,salario_diario,salario_integrado,rfc,curp,registro_imss,direccion,cp,contrato_sat) values ('" + numero + "','" + nombre + "','" + apellido_paterno + "','" + apellido_materno + "','" + clave_puesto + "','" + clave_depto + "','" + clave_frecuencia_pago + "','" + num_reg_patronal + "','" + forma_pago + "','" + contrato + "','" + jornada + "','" + regimen_fiscal + "','" + fecha_ingreso + "','" + estatus + "','" + tipo_salario + "','" + salario_diario + "','" + salario_integrado + "','" + rfc + "','" + curp + "','" + registro_imss + "','" + direccion + "','" + cp + "','" + contratosat + "')";
+                SqlCommand comando = new SqlCommand(sql,conexion);
+                comando.ExecuteNonQuery();
+                conexion.Close();
             }
             catch (Exception ex)
             {

@@ -38,7 +38,7 @@ namespace Datos_Empleados
         }
 
 
-        //Visibilidad de los paneles
+        //Visibilidad de los paneles (revision correcta)
         private void Form1_Load(object sender, EventArgs e)
         {
             panel_alta_empleados.Visible = false;
@@ -96,7 +96,7 @@ namespace Datos_Empleados
 
         }
 
-        //Ingreso de empleados
+        //Ingreso de empleados (revision correcta)
         private void BTNIempleados_Click(object sender, EventArgs e)
         {
             
@@ -114,7 +114,7 @@ namespace Datos_Empleados
                 }
 
                 conn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;data source=" + texto + ";Extended Properties='Excel 12.0 Xml;HDR=Yes'");
-                OleDbDataAdapter MyDataAdapter = new OleDbDataAdapter("Select  [numero],[nombre],[apellido_paterno],[apellido_materno],[clave_puesto],[clave_depto],[clave_frecuencia_pago],[num_reg_patronal],[forma_pago],[contrato],[jornada],[regimen_fiscal],[fecha_ingreso],[estatus],[tipo_salario],[salario_diario],[salario_integrado],[rfc],[curp],[reg_imss],[direccion],[cp],[contrato_sat] from [alta_empleado$]", conn);
+                OleDbDataAdapter MyDataAdapter = new OleDbDataAdapter("Select [numero],[nombre],[apellido_paterno],[apellido_materno],[clave_puesto],[clave_depto],[clave_frecuencia_pago],[num_reg_patronal],[forma_pago],[contrato],[jornada],[regimen_fiscal],[fecha_ingreso],[estatus],[tipo_salario],[salario_diario],[salario_integrado],[rfc],[curp],[reg_imss],[direccion],[cp],[contrato_sat] from [alta_empleado$]", conn);
                      dt = new DataTable();
                     MyDataAdapter.Fill(dt);
                     DGVAempleados.DataSource = dt;
@@ -185,7 +185,9 @@ namespace Datos_Empleados
 
             try
             {
-                this.arreDatos = this.alta.datosempleado ();
+               
+
+                    this.arreDatos = this.alta.datosempleado ();
                 this.dataGridView1.Rows.Clear();
                 
                 if (this.arreDatos.Count > 0)
