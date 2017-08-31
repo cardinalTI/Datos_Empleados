@@ -22,9 +22,11 @@ namespace Datos_Empleados
         Msueldo_empleado sueldo = new Msueldo_empleado();
         Mcuentas cuentas = new Mcuentas();
 
-     
-      
 
+
+        OleDbConnection conn;
+        OleDbDataAdapter MyDataAdapter;
+        DataTable dt;
         string texto;
         private ArrayList arreDatos;
         int contador;
@@ -101,19 +103,22 @@ namespace Datos_Empleados
             try
             {
                 OpenFileDialog openfile1 = new OpenFileDialog();
+                openfile1.Filter = "Excel Files |*.xlsx";
+                openfile1.Title = "Seleccione el archivo de Excel";
                 if (openfile1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    
-                    texto = openfile1.FileName;
+                    if (openfile1.FileName.Equals("") == false)
+                    {
+                        texto = openfile1.FileName;
+                    }
                 }
-                {
-                    string pathconn = "Provider = Microsoft.jet.OLEDB.4.0; Data source=" + texto + ";Extended Properties=\"Excel 8.0;HDR= yes;\";";
-                    OleDbConnection conn = new OleDbConnection(pathconn);
-                    OleDbDataAdapter MyDataAdapter = new OleDbDataAdapter("Select  [numero],[nombre],[apellido_paterno],[apellido_materno],[clave_puesto],[clave_depto],[clave_frecuencia_pago],[num_reg_patronal],[forma_pago],[contrato],[jornada],[regimen_fiscal],[fecha_ingreso],[estatus],[tipo_salario],[salario_diario],[salario_integrado],[rfc],[curp],[reg_imss],[dirección],[cp],[contrato_sat]  from [alta_empleado$]", conn);
-                    DataTable dt = new DataTable();
+
+                conn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;data source=" + texto + ";Extended Properties='Excel 12.0 Xml;HDR=Yes'");
+                OleDbDataAdapter MyDataAdapter = new OleDbDataAdapter("Select  [numero],[nombre],[apellido_paterno],[apellido_materno],[clave_puesto],[clave_depto],[clave_frecuencia_pago],[num_reg_patronal],[forma_pago],[contrato],[jornada],[regimen_fiscal],[fecha_ingreso],[estatus],[tipo_salario],[salario_diario],[salario_integrado],[rfc],[curp],[reg_imss],[direccion],[cp],[contrato_sat] from [alta_empleado$]", conn);
+                     dt = new DataTable();
                     MyDataAdapter.Fill(dt);
                     DGVAempleados.DataSource = dt;
-                }
+                
             }
             catch (Exception ex)
             {
@@ -221,25 +226,29 @@ namespace Datos_Empleados
         }
 
 
-        //Baja de empleados
+        //Baja de empleados (revision correcta)
         private void BTNIbajas_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 OpenFileDialog openfile1 = new OpenFileDialog();
+                openfile1.Filter = "Excel Files |*.xlsx";
+                openfile1.Title = "Seleccione el archivo de Excel";
                 if (openfile1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
+                    if (openfile1.FileName.Equals("") == false)
+                    {
+                        texto = openfile1.FileName;
+                    }
+                }
 
-                    texto = openfile1.FileName;
-                }
-                {
-                    string pathconn = "Provider = Microsoft.jet.OLEDB.4.0; Data source=" + texto + ";Extended Properties=\"Excel 8.0;HDR= yes;\";";
-                    OleDbConnection conn = new OleDbConnection(pathconn);
-                    OleDbDataAdapter MyDataAdapter = new OleDbDataAdapter("Select [numero],[Registro_patronal],[Tipo],[Fecha],[Causa_baja] from [bajas_empleado$]", conn);
-                    DataTable dt = new DataTable();
-                    MyDataAdapter.Fill(dt);
-                    DGVbajas .DataSource = dt;
-                }
+                  conn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;data source=" + texto + ";Extended Properties='Excel 12.0 Xml;HDR=Yes'");
+                MyDataAdapter = new OleDbDataAdapter("Select [numero],[Registropatronal],[Tipo],[Fecha],[Causabaja] from [bajasempleado$]", conn);
+                dt = new DataTable();
+                MyDataAdapter.Fill(dt);
+                DGVbajas.DataSource = dt;
+               
             }
             catch (Exception ex)
             {
@@ -257,19 +266,25 @@ namespace Datos_Empleados
             try
             {
                 foreach (DataGridViewRow row in DGVbajas.Rows)
+
                 {
-
-                    empleado = baja.buscarempleado(Convert.ToString(row.Cells[0].Value), RC);
-                    if (empleado != "" )
+                    var cell = row.Cells[0].Value;
+                    if (cell!=null)
                     {
-                    registro = baja.buscarRegistro(Convert.ToString(row.Cells[1].Value), RC);
-                    if (registro != "")
-                    {
-                        baja.cargar(empleado, registro, Convert.ToString(row.Cells[2].Value), Convert.ToString(row.Cells[3].Value), Convert.ToString(row.Cells[4].Value),RC);
-                        contador ++;
+                        empleado = baja.buscarempleado(Convert.ToString(row.Cells[0].Value), RC);
+                        if (empleado != "")
+                        {
+                            registro = baja.buscarRegistro(Convert.ToString(row.Cells[1].Value), RC);
+                            if (registro != "")
+                            {
+                                baja.cargar(empleado, registro, Convert.ToString(row.Cells[2].Value), Convert.ToString(row.Cells[3].Value), Convert.ToString(row.Cells[4].Value), RC);
+                                contador++;
+                            }
+                        }
                     }
-                    }
-
+                       
+                    
+                   
                 }
                 
                 MessageBox.Show("Empleados Dados de Baja  Correctamente ");
@@ -284,25 +299,27 @@ namespace Datos_Empleados
         }
 
 
-        //sueldo empleados
+        //sueldo empleados (revision correcta)
         private void BTNIsueldos_Click(object sender, EventArgs e)
         {
             try
             {
                 OpenFileDialog openfile1 = new OpenFileDialog();
+                openfile1.Filter = "Excel Files |*.xlsx";
+                openfile1.Title = "Seleccione el archivo de Excel";
                 if (openfile1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
+                    if (openfile1.FileName.Equals("") == false)
+                    {
+                        texto = openfile1.FileName;
+                    }
+                }
 
-                    texto = openfile1.FileName;
-                }
-                {
-                    string pathconn = "Provider = Microsoft.jet.OLEDB.4.0; Data source=" + texto + ";Extended Properties=\"Excel 8.0;HDR= yes;\";";
-                    OleDbConnection conn = new OleDbConnection(pathconn);
-                    OleDbDataAdapter MyDataAdapter = new OleDbDataAdapter("Select [numero],[Registro_patronal],[Tipo],[Fecha],[Salario_hora],[Salario_diario],[Salario_integrado] from [sueldos_empleado$]", conn);
-                    DataTable dt = new DataTable();
-                    MyDataAdapter.Fill(dt);
-                    DGVAsueldo.DataSource = dt;
-                }
+                conn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;data source=" + texto + ";Extended Properties='Excel 12.0 Xml;HDR=Yes'");
+                OleDbDataAdapter MyDataAdapter = new OleDbDataAdapter("Select [numero],[Registro_patronal],[Tipo],[Fecha],[Salario_hora],[Salario_diario],[Salario_integrado] from [sueldos_empleado$]", conn);
+                dt = new DataTable();
+                MyDataAdapter.Fill(dt);
+                DGVAsueldo.DataSource = dt;
             }
             catch (Exception ex)
             {
@@ -321,21 +338,25 @@ namespace Datos_Empleados
             {
                 foreach (DataGridViewRow row in DGVAsueldo.Rows)
                 {
-
-                    empleado = sueldo.buscarempleado(Convert.ToString(row.Cells[0].Value), RC);
-                    if (empleado != "")
+                    var cell = row.Cells[0].Value;
+                    if (cell != null)
                     {
-                        registro = sueldo.buscarRegistro(Convert.ToString(row.Cells[1].Value), RC);
-                        if (registro != "")
+                        empleado = sueldo.buscarempleado(Convert.ToString(row.Cells[0].Value), RC);
+                        if (empleado != "")
                         {
-                            sueldo.cargarsueldos(empleado, registro, Convert.ToString(row.Cells[2].Value), Convert.ToString(row.Cells[3].Value), Convert.ToString(row.Cells[4].Value), Convert.ToString(row.Cells[5].Value), Convert.ToString(row.Cells[6].Value), RC);
-                            contador++;
+                            registro = sueldo.buscarRegistro(Convert.ToString(row.Cells[1].Value), RC);
+                            if (registro != "")
+                            {
+                                sueldo.cargarsueldos(empleado, registro, Convert.ToString(row.Cells[2].Value), Convert.ToString(row.Cells[3].Value), Convert.ToString(row.Cells[4].Value), Convert.ToString(row.Cells[5].Value), Convert.ToString(row.Cells[6].Value), RC);
+                                contador++;
+                            }
                         }
                     }
+                       
 
                 }
 
-                MessageBox.Show("Empleados Dados de Baja  Correctamente ");
+                MessageBox.Show("Salarios modificados Correctamente ");
             }
 
 
@@ -346,25 +367,28 @@ namespace Datos_Empleados
             }
         }
 
-        //Cuentas Empleados
+        //Cuentas Empleados (revision correcta)
         private void BTNIcuentas_Click(object sender, EventArgs e)
         {
             try
             {
                 OpenFileDialog openfile1 = new OpenFileDialog();
+                openfile1.Filter = "Excel Files |*.xlsx";
+                openfile1.Title = "Seleccione el archivo de Excel";
                 if (openfile1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
+                    if (openfile1.FileName.Equals("") == false)
+                    {
+                        texto = openfile1.FileName;
+                    }
+                }
 
-                    texto = openfile1.FileName;
-                }
-                {
-                    string pathconn = "Provider = Microsoft.jet.OLEDB.4.0; Data source=" + texto + ";Extended Properties=\"Excel 8.0;HDR= yes;\";";
-                    OleDbConnection conn = new OleDbConnection(pathconn);
-                    OleDbDataAdapter MyDataAdapter = new OleDbDataAdapter("Select [Empleado],[Cuenta],[Banco] from [cuentas_empleado$]", conn);
-                    DataTable dt = new DataTable();
-                    MyDataAdapter.Fill(dt);
-                    DGVcuentas.DataSource = dt;
-                }
+                conn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;data source=" + texto + ";Extended Properties='Excel 12.0 Xml;HDR=Yes'");
+                OleDbDataAdapter MyDataAdapter = new OleDbDataAdapter("Select [Empleado],[Cuenta],[Banco] from [cuentas_empleado$]", conn);
+                dt = new DataTable();
+                MyDataAdapter.Fill(dt);
+                 DGVcuentas.DataSource = dt;
+                
             }
             catch (Exception ex)
             {
@@ -381,15 +405,26 @@ namespace Datos_Empleados
             string RC = cuentas.conexiofinal(conexion);
             try
             {
-                foreach (DataGridViewRow row in DGVAsueldo.Rows)
+                foreach (DataGridViewRow row in DGVcuentas .Rows)
                 {
-                     cuentas.cargarcuentas(Convert.ToString(row.Cells[0].Value), Convert.ToString(row.Cells[1].Value), RC);
-                    cuentas.cargarbancos(Convert.ToString(row.Cells[0].Value), Convert.ToString(row.Cells[2].Value), RC,CBXcuentas.Text);
-                     contador++;
+                    var cell = row.Cells[0].Value;
+                    if (cell != null)
+                    {
+                        cuentas.cargarcuentas(Convert.ToString(row.Cells[0].Value), Convert.ToString(row.Cells[1].Value), RC);
+                        string banco =cuentas.buscarRegistro(Convert.ToString(row.Cells[2].Value), RC);
+
+                        if (banco != "")
+                        {
+                            cuentas.cargarbancos(Convert.ToString(row.Cells[0].Value), banco, RC, CBXcuentas.Text);
+                        }
+                       
+                        contador++;
+                    }
+                        
                         
                 }
 
-                MessageBox.Show("Empleados Dados de Baja  Correctamente ");
+                MessageBox.Show("Cuentas modificadas Correctamente ");
             }
 
 
@@ -401,6 +436,7 @@ namespace Datos_Empleados
 
         }
 
+        //Departamentos
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -412,7 +448,7 @@ namespace Datos_Empleados
                     texto = openfile1.FileName;
                 }
                 {
-                    string pathconn = "Provider = Microsoft.jet.OLEDB.4.0; Data source=" + texto + ";Extended Properties=\"Excel 8.0;HDR= yes;\";";
+                    string pathconn = "Provider = Microsoft.ACE.OLEDB.12.0; Data source=" + texto + ";Extended Properties=\"Excel 12.0;HDR= yes;\";";
                     OleDbConnection conn = new OleDbConnection(pathconn);
                     OleDbDataAdapter MyDataAdapter = new OleDbDataAdapter("Select [nombre],[clave] from [departamentos_empleado$]", conn);
                     DataTable dt = new DataTable();

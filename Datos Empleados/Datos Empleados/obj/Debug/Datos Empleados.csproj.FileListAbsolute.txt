@@ -9,3 +9,14 @@ c:\users\jose\documents\visual studio 2015\Projects\Datos Empleados\Datos Emplea
 C:\Users\Jose\Documents\Visual Studio 2015\Projects\Datos Empleados\Datos Empleados\bin\Debug\FirebirdSql.Data.FirebirdClient.dll
 C:\Users\Jose\Documents\Visual Studio 2015\Projects\Datos Empleados\Datos Empleados\bin\Debug\FirebirdSql.Data.FirebirdClient.pdb
 C:\Users\Jose\Documents\Visual Studio 2015\Projects\Datos Empleados\Datos Empleados\obj\Debug\Datos_Empleados.Principal.resources
+C:\Users\Jose\Documents\GitHub\Datos_Empleados\Datos Empleados\Datos Empleados\bin\Debug\Datos Empleados.exe.config
+C:\Users\Jose\Documents\GitHub\Datos_Empleados\Datos Empleados\Datos Empleados\obj\Debug\Datos Empleados.exe
+C:\Users\Jose\Documents\GitHub\Datos_Empleados\Datos Empleados\Datos Empleados\obj\Debug\Datos Empleados.pdb
+C:\Users\Jose\Documents\GitHub\Datos_Empleados\Datos Empleados\Datos Empleados\bin\Debug\Datos Empleados.exe
+C:\Users\Jose\Documents\GitHub\Datos_Empleados\Datos Empleados\Datos Empleados\bin\Debug\Datos Empleados.pdb
+C:\Users\Jose\Documents\GitHub\Datos_Empleados\Datos Empleados\Datos Empleados\bin\Debug\FirebirdSql.Data.FirebirdClient.dll
+C:\Users\Jose\Documents\GitHub\Datos_Empleados\Datos Empleados\Datos Empleados\bin\Debug\FirebirdSql.Data.FirebirdClient.pdb
+C:\Users\Jose\Documents\GitHub\Datos_Empleados\Datos Empleados\Datos Empleados\obj\Debug\Datos Empleados.csprojResolveAssemblyReference.cache
+C:\Users\Jose\Documents\GitHub\Datos_Empleados\Datos Empleados\Datos Empleados\obj\Debug\Datos_Empleados.Principal.resources
+C:\Users\Jose\Documents\GitHub\Datos_Empleados\Datos Empleados\Datos Empleados\obj\Debug\Datos_Empleados.Properties.Resources.resources
+C:\Users\Jose\Documents\GitHub\Datos_Empleados\Datos Empleados\Datos Empleados\obj\Debug\Datos Empleados.csproj.GenerateResource.Cache

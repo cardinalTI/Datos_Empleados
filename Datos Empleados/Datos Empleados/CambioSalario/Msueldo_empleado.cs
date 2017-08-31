@@ -94,6 +94,7 @@ namespace Datos_Empleados
             try
             {
                 string datobuscar;
+                datobuscar = "";
                 string sql = "select empleado_id from claves_empleados where clave_empleado  = " + empleado;
                 OdbcConnection conn = new OdbcConnection(rc);
                 OdbcCommand command = new OdbcCommand(sql, conn);
@@ -104,7 +105,7 @@ namespace Datos_Empleados
                 {
                     datobuscar = reader["empleado_id"].ToString();
                 }
-                return empleado;
+                return datobuscar ;
             }
             catch (Exception e)
             {
@@ -120,7 +121,8 @@ namespace Datos_Empleados
             try
             {
                 string datobuscar;
-                string sql = "select reg_patronal_id from reg_patronales where num_reg_patronal  = " + registro;
+                datobuscar ="";
+                string sql = "select reg_patronal_id from reg_patronales where num_reg_patronal  = " + "'" + registro + "'";
                 OdbcConnection conn = new OdbcConnection(rc);
                 OdbcCommand command = new OdbcCommand(sql, conn);
 
@@ -130,7 +132,7 @@ namespace Datos_Empleados
                 {
                     datobuscar = reader["reg_patronal_id"].ToString();
                 }
-                return registro;
+                return datobuscar ;
             }
             catch (Exception e)
             {
@@ -145,10 +147,15 @@ namespace Datos_Empleados
 
             try
             {
+                DateTime enteredDate = DateTime.Parse(fecha);
+                fecha = enteredDate.ToString("dd.MM.yyyy");
+
                 OdbcConnection conexion = new OdbcConnection();
                 conexion.ConnectionString = rc;
                 conexion.Open();
-                OdbcCommand comando = new OdbcCommand("insert into incidencias (INCIDENCIA_ID,EMPLEADO_ID,REG_PATRONAL_ID,TIPO,FECHA,SALARIO_DIARIO,SALARIO_HORA,SALARIO_INTEG,SALINT_DEFAULT,FORMA_EMITIDA) values (GEN_ID(ID_DOCTOS,1),'" + id_empleado + "','" + registro_patronal + "','" + tipo + "','" + fecha + "','" + salario_diario + "','" + salario_hora + "','" + salario_integrado + "','" + "S" + "', '" + "N" + "')");
+                string sql = "insert into incidencias (INCIDENCIA_ID,EMPLEADO_ID,REG_PATRONAL_ID,TIPO,FECHA,SALARIO_DIARIO,SALARIO_HORA,SALARIO_INTEG,SALINT_DEFAULT,FORMA_EMITIDA) values (GEN_ID(ID_DOCTOS,1),'" + id_empleado + "','" + registro_patronal + "','" + tipo + "','" + fecha + "','" + salario_diario + "','" + salario_hora + "','" + salario_integrado + "','" + "S" + "', '" + "N" + "')";
+
+                OdbcCommand comando = new OdbcCommand(sql,conexion );
                 comando.ExecuteNonQuery();
                 conexion.Close();
             }
