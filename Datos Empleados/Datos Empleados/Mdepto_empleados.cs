@@ -9,9 +9,8 @@ using System.Windows.Forms;
 
 namespace Datos_Empleados
 {
-    class Msueldo_empleado
+    class Mdepto_empleados
     {
-
         string cadena;
         public virtual string conexiofinal(string conexion)
         {
@@ -88,41 +87,13 @@ namespace Datos_Empleados
             return cadena;
         }
 
-
-        public virtual string buscarempleado(string empleado, string rc)
-        {
-            try
-            {
-                string datobuscar;
-                datobuscar = "";
-                string sql = "select empleado_id from claves_empleados where clave_empleado  = " + empleado;
-                OdbcConnection conn = new OdbcConnection(rc);
-                OdbcCommand command = new OdbcCommand(sql, conn);
-
-                conn.Open();
-                OdbcDataReader reader = command.ExecuteReader();
-                if (reader.Read())
-                {
-                    datobuscar = reader["empleado_id"].ToString();
-                }
-                return datobuscar ;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
-                throw;
-            }
-
-
-        }
-
         public virtual string buscarRegistro(string registro, string rc)
         {
             try
             {
                 string datobuscar;
-                datobuscar ="";
-                string sql = "select reg_patronal_id from reg_patronales where num_reg_patronal  = " + "'" + registro + "'";
+                datobuscar = "";
+                string sql = "select DEPTO_NO_ID from DEPTOS_NO where NOMBRE  = " + "'" + registro + "'";
                 OdbcConnection conn = new OdbcConnection(rc);
                 OdbcCommand command = new OdbcCommand(sql, conn);
 
@@ -130,32 +101,29 @@ namespace Datos_Empleados
                 OdbcDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    datobuscar = reader["reg_patronal_id"].ToString();
+                    datobuscar = reader["DEPTO_NO_ID"].ToString();
                 }
-                return datobuscar ;
+                return datobuscar;
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
                 throw;
             }
-         
+          
         }
 
-        public void cargarsueldos(string id_empleado, string registro_patronal, string tipo, string fecha, string salario_diario,string salario_hora,string salario_integrado, string rc)
+        public void cargar_depto(string clave, string ID, string rc)
         {
-
             try
             {
-                DateTime enteredDate = DateTime.Parse(fecha);
-                fecha = enteredDate.ToString("dd.MM.yyyy");
-
+               
                 OdbcConnection conexion = new OdbcConnection();
                 conexion.ConnectionString = rc;
                 conexion.Open();
-                string sql = "insert into incidencias (INCIDENCIA_ID,EMPLEADO_ID,REG_PATRONAL_ID,TIPO,FECHA,SALARIO_DIARIO,SALARIO_HORA,SALARIO_INTEG,SALINT_DEFAULT,FORMA_EMITIDA) values (GEN_ID(ID_DOCTOS,1),'" + id_empleado + "','" + registro_patronal + "','" + tipo + "','" + fecha + "','" + salario_diario + "','" + salario_hora + "','" + salario_integrado + "','" + "S" + "', '" + "N" + "')";
+                string sql = "insert into CLAVES_CAT_SEC (NOMBRE_TABLA,ELEM_ID,CLAVE)  values ( " + "'" + "DEPTOS_NO" + "'" + ",'" + ID + "'" + ",'" + clave + "'" + ")";
 
-                OdbcCommand comando = new OdbcCommand(sql,conexion );
+                OdbcCommand comando = new OdbcCommand(sql, conexion);
                 comando.ExecuteNonQuery();
                 conexion.Close();
             }
@@ -164,8 +132,28 @@ namespace Datos_Empleados
                 MessageBox.Show("Error" + ex.Message);
                 throw;
             }
-
         }
 
+
+        public void agregar_depto(string nombre, string rc)
+        {
+            try
+            {
+
+                OdbcConnection conexion = new OdbcConnection();
+                conexion.ConnectionString = rc;
+                conexion.Open();
+                string sql = "insert into DEPTOS_NO (DEPTO_NO_ID,NOMBRE)  values (GEN_ID(ID_CATALOGOS,1),'" + nombre + "')";
+
+                OdbcCommand comando = new OdbcCommand(sql, conexion);
+                comando.ExecuteNonQuery();
+                conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+                throw;
+            }
+        }
     }
 }

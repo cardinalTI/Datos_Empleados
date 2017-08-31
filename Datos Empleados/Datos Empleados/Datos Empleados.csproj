@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="CambioSalario\Msueldo_empleado.cs" />
     <Compile Include="CuentasBanco\Mcuentas.cs" />
+    <Compile Include="Mdepto_empleados.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>

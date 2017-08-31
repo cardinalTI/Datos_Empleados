@@ -55,15 +55,15 @@
             this.DGVAsueldo = new System.Windows.Forms.DataGridView();
             this.BTNIsueldos = new System.Windows.Forms.Button();
             this.panel_cuentas = new System.Windows.Forms.Panel();
-            this.BTNIcuentas = new System.Windows.Forms.Button();
-            this.BTNAcuentas = new System.Windows.Forms.Button();
-            this.CBXcuentas = new System.Windows.Forms.ComboBox();
             this.DGVcuentas = new System.Windows.Forms.DataGridView();
+            this.CBXcuentas = new System.Windows.Forms.ComboBox();
+            this.BTNAcuentas = new System.Windows.Forms.Button();
+            this.BTNIcuentas = new System.Windows.Forms.Button();
             this.panel_departamento = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.CBXDepto = new System.Windows.Forms.ComboBox();
             this.DGVIdepartamento = new System.Windows.Forms.DataGridView();
+            this.CBXDepto = new System.Windows.Forms.ComboBox();
+            this.BTNIdepartamentos = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAempleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -376,25 +376,13 @@
             this.panel_cuentas.Size = new System.Drawing.Size(808, 425);
             this.panel_cuentas.TabIndex = 5;
             // 
-            // BTNIcuentas
+            // DGVcuentas
             // 
-            this.BTNIcuentas.Location = new System.Drawing.Point(13, 21);
-            this.BTNIcuentas.Name = "BTNIcuentas";
-            this.BTNIcuentas.Size = new System.Drawing.Size(212, 23);
-            this.BTNIcuentas.TabIndex = 0;
-            this.BTNIcuentas.Text = "Importar Cuentas Bancarias de Excel";
-            this.BTNIcuentas.UseVisualStyleBackColor = true;
-            this.BTNIcuentas.Click += new System.EventHandler(this.BTNIcuentas_Click);
-            // 
-            // BTNAcuentas
-            // 
-            this.BTNAcuentas.Location = new System.Drawing.Point(495, 19);
-            this.BTNAcuentas.Name = "BTNAcuentas";
-            this.BTNAcuentas.Size = new System.Drawing.Size(191, 23);
-            this.BTNAcuentas.TabIndex = 1;
-            this.BTNAcuentas.Text = "Actualizar Cuentas Bancarias";
-            this.BTNAcuentas.UseVisualStyleBackColor = true;
-            this.BTNAcuentas.Click += new System.EventHandler(this.BTNAcuentas_Click);
+            this.DGVcuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVcuentas.Location = new System.Drawing.Point(13, 52);
+            this.DGVcuentas.Name = "DGVcuentas";
+            this.DGVcuentas.Size = new System.Drawing.Size(772, 365);
+            this.DGVcuentas.TabIndex = 3;
             // 
             // CBXcuentas
             // 
@@ -422,43 +410,44 @@
             this.CBXcuentas.Size = new System.Drawing.Size(234, 21);
             this.CBXcuentas.TabIndex = 2;
             // 
-            // DGVcuentas
+            // BTNAcuentas
             // 
-            this.DGVcuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVcuentas.Location = new System.Drawing.Point(13, 52);
-            this.DGVcuentas.Name = "DGVcuentas";
-            this.DGVcuentas.Size = new System.Drawing.Size(772, 365);
-            this.DGVcuentas.TabIndex = 3;
+            this.BTNAcuentas.Location = new System.Drawing.Point(495, 19);
+            this.BTNAcuentas.Name = "BTNAcuentas";
+            this.BTNAcuentas.Size = new System.Drawing.Size(191, 23);
+            this.BTNAcuentas.TabIndex = 1;
+            this.BTNAcuentas.Text = "Actualizar Cuentas Bancarias";
+            this.BTNAcuentas.UseVisualStyleBackColor = true;
+            this.BTNAcuentas.Click += new System.EventHandler(this.BTNAcuentas_Click);
+            // 
+            // BTNIcuentas
+            // 
+            this.BTNIcuentas.Location = new System.Drawing.Point(13, 21);
+            this.BTNIcuentas.Name = "BTNIcuentas";
+            this.BTNIcuentas.Size = new System.Drawing.Size(212, 23);
+            this.BTNIcuentas.TabIndex = 0;
+            this.BTNIcuentas.Text = "Importar Cuentas Bancarias de Excel";
+            this.BTNIcuentas.UseVisualStyleBackColor = true;
+            this.BTNIcuentas.Click += new System.EventHandler(this.BTNIcuentas_Click);
             // 
             // panel_departamento
             // 
             this.panel_departamento.Controls.Add(this.DGVIdepartamento);
             this.panel_departamento.Controls.Add(this.CBXDepto);
-            this.panel_departamento.Controls.Add(this.button2);
+            this.panel_departamento.Controls.Add(this.BTNIdepartamentos);
             this.panel_departamento.Controls.Add(this.button1);
             this.panel_departamento.Location = new System.Drawing.Point(106, 0);
             this.panel_departamento.Name = "panel_departamento";
             this.panel_departamento.Size = new System.Drawing.Size(808, 428);
             this.panel_departamento.TabIndex = 6;
             // 
-            // button1
+            // DGVIdepartamento
             // 
-            this.button1.Location = new System.Drawing.Point(13, 35);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(199, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Importar Departamentos de Excel";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(445, 37);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(169, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Agregar Departamentos";
-            this.button2.UseVisualStyleBackColor = true;
+            this.DGVIdepartamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVIdepartamento.Location = new System.Drawing.Point(13, 67);
+            this.DGVIdepartamento.Name = "DGVIdepartamento";
+            this.DGVIdepartamento.Size = new System.Drawing.Size(780, 349);
+            this.DGVIdepartamento.TabIndex = 3;
             // 
             // CBXDepto
             // 
@@ -487,13 +476,25 @@
             this.CBXDepto.Size = new System.Drawing.Size(221, 21);
             this.CBXDepto.TabIndex = 2;
             // 
-            // DGVIdepartamento
+            // BTNIdepartamentos
             // 
-            this.DGVIdepartamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVIdepartamento.Location = new System.Drawing.Point(13, 67);
-            this.DGVIdepartamento.Name = "DGVIdepartamento";
-            this.DGVIdepartamento.Size = new System.Drawing.Size(780, 349);
-            this.DGVIdepartamento.TabIndex = 3;
+            this.BTNIdepartamentos.Location = new System.Drawing.Point(445, 37);
+            this.BTNIdepartamentos.Name = "BTNIdepartamentos";
+            this.BTNIdepartamentos.Size = new System.Drawing.Size(169, 23);
+            this.BTNIdepartamentos.TabIndex = 1;
+            this.BTNIdepartamentos.Text = "Agregar Departamentos";
+            this.BTNIdepartamentos.UseVisualStyleBackColor = true;
+            this.BTNIdepartamentos.Click += new System.EventHandler(this.BTNIdepartamentos_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(13, 35);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(199, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Importar Departamentos de Excel";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Principal
             // 
@@ -567,7 +568,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView DGVIdepartamento;
         private System.Windows.Forms.ComboBox CBXDepto;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BTNIdepartamentos;
     }
 }
 

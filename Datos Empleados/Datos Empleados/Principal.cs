@@ -21,6 +21,7 @@ namespace Datos_Empleados
         Mbaja_Empleados baja = new Mbaja_Empleados();
         Msueldo_empleado sueldo = new Msueldo_empleado();
         Mcuentas cuentas = new Mcuentas();
+        Mdepto_empleados depto = new Mdepto_empleados();
 
 
 
@@ -422,15 +423,12 @@ namespace Datos_Empleados
                        
                         contador++;
                     }
-                        
-                        
+                       
                 }
 
                 MessageBox.Show("Cuentas modificadas Correctamente ");
             }
-
-
-
+            
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -444,25 +442,66 @@ namespace Datos_Empleados
             try
             {
                 OpenFileDialog openfile1 = new OpenFileDialog();
+                openfile1.Filter = "Excel Files |*.xlsx";
+                openfile1.Title = "Seleccione el archivo de Excel";
                 if (openfile1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-
-                    texto = openfile1.FileName;
+                    if (openfile1.FileName.Equals("") == false)
+                    {
+                        texto = openfile1.FileName;
+                    }
                 }
-                {
-                    string pathconn = "Provider = Microsoft.ACE.OLEDB.12.0; Data source=" + texto + ";Extended Properties=\"Excel 12.0;HDR= yes;\";";
-                    OleDbConnection conn = new OleDbConnection(pathconn);
-                    OleDbDataAdapter MyDataAdapter = new OleDbDataAdapter("Select [nombre],[clave] from [departamentos_empleado$]", conn);
-                    DataTable dt = new DataTable();
+
+                conn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;data source=" + texto + ";Extended Properties='Excel 12.0 Xml;HDR=Yes'");
+                OleDbDataAdapter MyDataAdapter = new OleDbDataAdapter("Select [nombre],[clave] from [departamentos_empleado$]", conn);
+                     dt = new DataTable();
                     MyDataAdapter.Fill(dt);
                     DGVIdepartamento.DataSource = dt;
-                }
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
                 throw;
             }
+        }
+
+        private void BTNIdepartamentos_Click(object sender, EventArgs e)
+        {
+
+            string conexion = CBXDepto.Text;
+
+
+            string RC = depto.conexiofinal(conexion);
+            try
+            {
+                foreach (DataGridViewRow row in DGVIdepartamento .Rows)
+                {
+                    var cell = row.Cells[0].Value;
+                    if (cell != null)
+                    {
+                        depto.agregar_depto(Convert.ToString(row.Cells[0].Value),RC );
+                        
+                        string deptoe = depto.buscarRegistro(Convert.ToString(row.Cells[0].Value), RC);
+
+                        if (deptoe != "")
+                        {
+                            depto.cargar_depto(Convert.ToString(row.Cells[1].Value),deptoe, RC);
+                        }
+
+                        contador++;
+                    }
+                    
+                }
+
+                MessageBox.Show("Departamentos Agregados Correctamente ");
+            }
+            
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }
