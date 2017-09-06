@@ -20,3 +20,5 @@ C:\Users\Jose\Documents\GitHub\Datos_Empleados\Datos Empleados\Datos Empleados\o
 C:\Users\Jose\Documents\GitHub\Datos_Empleados\Datos Empleados\Datos Empleados\obj\Debug\Datos_Empleados.Principal.resources
 C:\Users\Jose\Documents\GitHub\Datos_Empleados\Datos Empleados\Datos Empleados\obj\Debug\Datos_Empleados.Properties.Resources.resources
 C:\Users\Jose\Documents\GitHub\Datos_Empleados\Datos Empleados\Datos Empleados\obj\Debug\Datos Empleados.csproj.GenerateResource.Cache
+C:\Users\Jose\Documents\GitHub\Datos_Empleados\Datos Empleados\Datos Empleados\obj\Debug\Datos_Empleados.Menu_Principal.resources
+C:\Users\Jose\Documents\GitHub\Datos_Empleados\Datos Empleados\Datos Empleados\obj\Debug\Datos_Empleados.reporte.resources

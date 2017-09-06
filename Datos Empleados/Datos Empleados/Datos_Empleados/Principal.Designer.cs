@@ -65,10 +65,10 @@
             this.BTNIdepartamentos = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel_puestos = new System.Windows.Forms.Panel();
-            this.BTNEpuesto = new System.Windows.Forms.Button();
-            this.BTNIpuesto = new System.Windows.Forms.Button();
-            this.DGVpuesto = new System.Windows.Forms.DataGridView();
             this.CBXpuesto = new System.Windows.Forms.ComboBox();
+            this.DGVpuesto = new System.Windows.Forms.DataGridView();
+            this.BTNIpuesto = new System.Windows.Forms.Button();
+            this.BTNEpuesto = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAempleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -269,9 +269,9 @@
             "MORGET INTERNA",
             "AICEL",
             "NUBULA",
-            "CONSORCIO ATERAP SA DE CV",
-            "CROTEC SA DE CV",
-            "PEPSAT SA DE CV",
+            "CONSORCIO ATERAP",
+            "CROTEC",
+            "PEPSAT",
             "INFORMATION THECNOLOGY",
             "UPHETILOLI 2"});
             this.CBXbajas.Location = new System.Drawing.Point(163, 25);
@@ -408,9 +408,9 @@
             "MORGET INTERNA",
             "AICEL",
             "NUBULA",
-            "CONSORCIO ATERAP SA DE CV",
-            "CROTEC SA DE CV",
-            "PEPSAT SA DE CV",
+            "CONSORCIO ATERAP",
+            "CROTEC",
+            "PEPSAT",
             "INFORMATION THECNOLOGY",
             "UPHETILOLI 2"});
             this.CBXcuentas.Location = new System.Drawing.Point(242, 21);
@@ -474,9 +474,9 @@
             "MORGET INTERNA",
             "AICEL",
             "NUBULA",
-            "CONSORCIO ATERAP SA DE CV",
-            "CROTEC SA DE CV",
-            "PEPSAT SA DE CV",
+            "CONSORCIO ATERAP",
+            "CROTEC",
+            "PEPSAT",
             "INFORMATION THECNOLOGY",
             "UPHETILOLI 2"});
             this.CBXDepto.Location = new System.Drawing.Point(218, 37);
@@ -515,34 +515,6 @@
             this.panel_puestos.Size = new System.Drawing.Size(808, 428);
             this.panel_puestos.TabIndex = 7;
             // 
-            // BTNEpuesto
-            // 
-            this.BTNEpuesto.Location = new System.Drawing.Point(13, 35);
-            this.BTNEpuesto.Name = "BTNEpuesto";
-            this.BTNEpuesto.Size = new System.Drawing.Size(184, 23);
-            this.BTNEpuesto.TabIndex = 0;
-            this.BTNEpuesto.Text = "Importar Puestos de Excel";
-            this.BTNEpuesto.UseVisualStyleBackColor = true;
-            this.BTNEpuesto.Click += new System.EventHandler(this.BTNEpuesto_Click);
-            // 
-            // BTNIpuesto
-            // 
-            this.BTNIpuesto.Location = new System.Drawing.Point(427, 37);
-            this.BTNIpuesto.Name = "BTNIpuesto";
-            this.BTNIpuesto.Size = new System.Drawing.Size(184, 23);
-            this.BTNIpuesto.TabIndex = 1;
-            this.BTNIpuesto.Text = "Agregar Puestos";
-            this.BTNIpuesto.UseVisualStyleBackColor = true;
-            this.BTNIpuesto.Click += new System.EventHandler(this.BTNIpuesto_Click);
-            // 
-            // DGVpuesto
-            // 
-            this.DGVpuesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVpuesto.Location = new System.Drawing.Point(13, 67);
-            this.DGVpuesto.Name = "DGVpuesto";
-            this.DGVpuesto.Size = new System.Drawing.Size(787, 352);
-            this.DGVpuesto.TabIndex = 2;
-            // 
             // CBXpuesto
             // 
             this.CBXpuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -560,15 +532,43 @@
             "MORGET INTERNA",
             "AICEL",
             "NUBULA",
-            "CONSORCIO ATERAP SA DE CV",
-            "CROTEC SA DE CV",
-            "PEPSAT SA DE CV",
+            "CONSORCIO ATERAP",
+            "CROTEC",
+            "PEPSAT",
             "INFORMATION THECNOLOGY",
             "UPHETILOLI 2"});
             this.CBXpuesto.Location = new System.Drawing.Point(203, 37);
             this.CBXpuesto.Name = "CBXpuesto";
             this.CBXpuesto.Size = new System.Drawing.Size(218, 21);
             this.CBXpuesto.TabIndex = 3;
+            // 
+            // DGVpuesto
+            // 
+            this.DGVpuesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVpuesto.Location = new System.Drawing.Point(13, 67);
+            this.DGVpuesto.Name = "DGVpuesto";
+            this.DGVpuesto.Size = new System.Drawing.Size(787, 352);
+            this.DGVpuesto.TabIndex = 2;
+            // 
+            // BTNIpuesto
+            // 
+            this.BTNIpuesto.Location = new System.Drawing.Point(427, 37);
+            this.BTNIpuesto.Name = "BTNIpuesto";
+            this.BTNIpuesto.Size = new System.Drawing.Size(184, 23);
+            this.BTNIpuesto.TabIndex = 1;
+            this.BTNIpuesto.Text = "Agregar Puestos";
+            this.BTNIpuesto.UseVisualStyleBackColor = true;
+            this.BTNIpuesto.Click += new System.EventHandler(this.BTNIpuesto_Click);
+            // 
+            // BTNEpuesto
+            // 
+            this.BTNEpuesto.Location = new System.Drawing.Point(13, 35);
+            this.BTNEpuesto.Name = "BTNEpuesto";
+            this.BTNEpuesto.Size = new System.Drawing.Size(184, 23);
+            this.BTNEpuesto.TabIndex = 0;
+            this.BTNEpuesto.Text = "Importar Puestos de Excel";
+            this.BTNEpuesto.UseVisualStyleBackColor = true;
+            this.BTNEpuesto.Click += new System.EventHandler(this.BTNEpuesto_Click);
             // 
             // Principal
             // 

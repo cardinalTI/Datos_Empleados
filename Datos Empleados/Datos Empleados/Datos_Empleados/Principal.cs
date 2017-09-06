@@ -521,6 +521,7 @@ namespace Datos_Empleados
 
         }
 
+        //Puestos (revision correcta)
         private void BTNEpuesto_Click(object sender, EventArgs e)
         {
             try

@@ -51,23 +51,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CambioSalario\Msueldo_empleado.cs" />
-    <Compile Include="CuentasBanco\Mcuentas.cs" />
-    <Compile Include="AgegarDepartamento\Mdepto_empleados.cs" />
-    <Compile Include="Mpuesto_empleados.cs" />
-    <Compile Include="Principal.cs">
+    <Compile Include="Datos_Empleados\CambioSalario\Msueldo_empleado.cs" />
+    <Compile Include="Datos_Empleados\CuentasBanco\Mcuentas.cs" />
+    <Compile Include="Datos_Empleados\AgegarDepartamento\Mdepto_empleados.cs" />
+    <Compile Include="Datos_Empleados\AgregarPuesto\Mpuesto_empleados.cs" />
+    <Compile Include="Datos_Empleados\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Principal.Designer.cs">
+    <Compile Include="Datos_Empleados\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="AltaEmpleados\Malta_empleados.cs" />
-    <Compile Include="BajaEmplados\Mbaja_Empleados.cs" />
+    <Compile Include="Datos_Empleados\AltaEmpleados\Malta_empleados.cs" />
+    <Compile Include="Datos_Empleados\BajaEmplados\Mbaja_Empleados.cs" />
+    <Compile Include="Menu_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu_Principal.Designer.cs">
+      <DependentUpon>Menu_Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MRnomina.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AltaEmpleados\Vempleados.cs" />
-    <EmbeddedResource Include="Principal.resx">
+    <Compile Include="Datos_Empleados\AltaEmpleados\Vempleados.cs" />
+    <Compile Include="reporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporte.Designer.cs">
+      <DependentUpon>reporte.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Datos_Empleados\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu_Principal.resx">
+      <DependentUpon>Menu_Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -79,6 +95,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="reporte.resx">
+      <DependentUpon>reporte.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -95,13 +114,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Img\empleado.png" />
+    <None Include="Resources\laptop.png" />
+    <None Include="Resources\analitica.png" />
+    <None Include="Resources\carpeta1.png" />
     <None Include="Resources\carpeta.png" />
     <None Include="Resources\simbolo-de-dolar.png" />
     <None Include="Resources\empleado %281%29.png" />
     <None Include="Resources\empleado.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AgregarPuesto\" />
+    <Folder Include="Reportes\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

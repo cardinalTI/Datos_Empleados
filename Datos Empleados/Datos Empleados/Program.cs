@@ -16,7 +16,7 @@ namespace Datos_Empleados
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Principal());
+            Application.Run(new Menu_Principal());
         }
     }
 }

@@ -17,77 +17,9 @@ namespace Datos_Empleados
     class Mbaja_Empleados
     {
         string cadena;
-        public virtual string   conexiofinal (string conexion)
+        public virtual string conexiofinal(string conexion)
         {
-
-            if (conexion == "NUBULA")
-            {
-                cadena = ConfigurationManager.ConnectionStrings["NUBULA"].ConnectionString;
-            }
-            if (conexion == "INFORMATION THECNOLOGY INDUSTRIES")
-            {
-                cadena = ConfigurationManager.ConnectionStrings["INFORMATION THECNOLOGY INDUSTRIES"].ConnectionString;
-            }
-            if (conexion == "FOLDUR")
-            {
-                cadena = ConfigurationManager.ConnectionStrings["FOLDUR"].ConnectionString;
-            }
-            if (conexion == "MORGET")
-            {
-                cadena = ConfigurationManager.ConnectionStrings["MORGET"].ConnectionString;
-            }
-            if (conexion == "GRUPO CONISAL")
-            {
-                cadena = ConfigurationManager.ConnectionStrings["GRUPOCONISAL"].ConnectionString;
-            }
-            if (conexion == "WIPSI")
-            {
-                cadena = ConfigurationManager.ConnectionStrings["WIPSI"].ConnectionString;
-            }
-            if (conexion == "MORGET SEMANAL")
-            {
-                cadena = ConfigurationManager.ConnectionStrings["MORGETSEMANAL"].ConnectionString;
-            }
-            if (conexion == "MORGET CATORCENAL")
-            {
-                cadena = ConfigurationManager.ConnectionStrings["MORGETCATORCENAL"].ConnectionString;
-            }
-            if (conexion == "MORGET QUINCENAL")
-            {
-                cadena = ConfigurationManager.ConnectionStrings["MORGETQUINCENAL"].ConnectionString;
-            }
-            if (conexion == "MORGET MENSUAL")
-            {
-                cadena = ConfigurationManager.ConnectionStrings["MORGETMENSUAL"].ConnectionString;
-            }
-            if (conexion == "IT TELECOM")
-            {
-                cadena = ConfigurationManager.ConnectionStrings["ITTELECOM"].ConnectionString;
-            }
-            if (conexion == "MORGET INTERNA")
-            {
-                cadena = ConfigurationManager.ConnectionStrings["MORGETINTERNA"].ConnectionString;
-            }
-            if (conexion == "AICEL")
-            {
-                cadena = ConfigurationManager.ConnectionStrings["AICEL"].ConnectionString;
-            }
-            if (conexion == "CONSORCIO ATERAP SA DE CV")
-            {
-                cadena = ConfigurationManager.ConnectionStrings["CONSORCIOATERAPSADECV"].ConnectionString;
-            }
-            if (conexion == "CROTEC SA DE CV")
-            {
-                cadena = ConfigurationManager.ConnectionStrings["CROTECSADECV"].ConnectionString;
-            }
-            if (conexion == "PEPSAT SA DE CV")
-            {
-                cadena = ConfigurationManager.ConnectionStrings["PEPSATSADECV"].ConnectionString;
-            }
-            if (conexion == "UPHETILOLI 2")
-            {
-                cadena = ConfigurationManager.ConnectionStrings["UPHETILOLI2"].ConnectionString;
-            }
+            cadena = ConfigurationManager.ConnectionStrings[conexion].ConnectionString;
 
             return cadena;
         }
