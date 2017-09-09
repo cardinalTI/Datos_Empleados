@@ -32,8 +32,8 @@
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nominaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.BTNgenerar = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panelnomina = new System.Windows.Forms.Panel();
+            this.DGVreporte = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,8 +96,8 @@
             this.CBXempresa = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            this.BTNgenerar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panelnomina.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVreporte)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -139,24 +139,28 @@
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
-            // BTNgenerar
+            // panelnomina
             // 
-            this.BTNgenerar.Controls.Add(this.dataGridView1);
-            this.BTNgenerar.Controls.Add(this.BTNexpo);
-            this.BTNgenerar.Controls.Add(this.button1);
-            this.BTNgenerar.Controls.Add(this.dateTimePicker1);
-            this.BTNgenerar.Controls.Add(this.label2);
-            this.BTNgenerar.Controls.Add(this.CBXempresa);
-            this.BTNgenerar.Controls.Add(this.label1);
-            this.BTNgenerar.Location = new System.Drawing.Point(85, 0);
-            this.BTNgenerar.Name = "BTNgenerar";
-            this.BTNgenerar.Size = new System.Drawing.Size(943, 407);
-            this.BTNgenerar.TabIndex = 1;
+            this.panelnomina.Controls.Add(this.DGVreporte);
+            this.panelnomina.Controls.Add(this.BTNexpo);
+            this.panelnomina.Controls.Add(this.button1);
+            this.panelnomina.Controls.Add(this.dateTimePicker1);
+            this.panelnomina.Controls.Add(this.label2);
+            this.panelnomina.Controls.Add(this.CBXempresa);
+            this.panelnomina.Controls.Add(this.label1);
+            this.panelnomina.Location = new System.Drawing.Point(85, 0);
+            this.panelnomina.Name = "panelnomina";
+            this.panelnomina.Size = new System.Drawing.Size(943, 407);
+            this.panelnomina.TabIndex = 1;
             // 
-            // dataGridView1
+            // DGVreporte
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DGVreporte.AllowUserToAddRows = false;
+            this.DGVreporte.AllowUserToDeleteRows = false;
+            this.DGVreporte.AllowUserToResizeColumns = false;
+            this.DGVreporte.AllowUserToResizeRows = false;
+            this.DGVreporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVreporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
@@ -212,10 +216,11 @@
             this.Column53,
             this.Column54,
             this.Column55});
-            this.dataGridView1.Location = new System.Drawing.Point(15, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(915, 364);
-            this.dataGridView1.TabIndex = 7;
+            this.DGVreporte.Location = new System.Drawing.Point(15, 43);
+            this.DGVreporte.Name = "DGVreporte";
+            this.DGVreporte.RowHeadersVisible = false;
+            this.DGVreporte.Size = new System.Drawing.Size(915, 364);
+            this.DGVreporte.TabIndex = 7;
             // 
             // Column1
             // 
@@ -501,6 +506,7 @@
             this.BTNexpo.TabIndex = 6;
             this.BTNexpo.Text = "Generar EXCEL";
             this.BTNexpo.UseVisualStyleBackColor = true;
+            this.BTNexpo.Click += new System.EventHandler(this.BTNexpo_Click);
             // 
             // button1
             // 
@@ -564,16 +570,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1027, 407);
-            this.Controls.Add(this.BTNgenerar);
+            this.Controls.Add(this.panelnomina);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "reporte";
             this.Text = "reporte";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.BTNgenerar.ResumeLayout(false);
-            this.BTNgenerar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panelnomina.ResumeLayout(false);
+            this.panelnomina.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVreporte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -585,14 +591,14 @@
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nominaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
-        private System.Windows.Forms.Panel BTNgenerar;
+        private System.Windows.Forms.Panel panelnomina;
         private System.Windows.Forms.ComboBox CBXempresa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BTNexpo;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGVreporte;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
