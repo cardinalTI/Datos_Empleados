@@ -95,9 +95,55 @@
             this.label2 = new System.Windows.Forms.Label();
             this.CBXempresa = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panelpeugeot = new System.Windows.Forms.Panel();
+            this.DGVpeugeot = new System.Windows.Forms.DataGridView();
+            this.Column56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column58 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column59 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column60 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column61 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column62 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column65 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column66 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column67 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column68 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column69 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column70 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column71 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column72 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column73 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column74 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column75 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column76 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column77 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column78 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column79 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column80 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column81 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column82 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column83 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column84 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column85 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column86 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column87 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column88 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column89 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column90 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column91 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column92 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column93 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column94 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column95 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.panelnomina.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVreporte)).BeginInit();
+            this.panelpeugeot.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVpeugeot)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -108,7 +154,7 @@
             this.reportesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(82, 407);
+            this.menuStrip1.Size = new System.Drawing.Size(82, 465);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -130,27 +176,23 @@
             // nominaToolStripMenuItem
             // 
             this.nominaToolStripMenuItem.Name = "nominaToolStripMenuItem";
-            this.nominaToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.nominaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nominaToolStripMenuItem.Text = "Nomina";
+            this.nominaToolStripMenuItem.Click += new System.EventHandler(this.nominaToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // panelnomina
             // 
             this.panelnomina.Controls.Add(this.DGVreporte);
-            this.panelnomina.Controls.Add(this.BTNexpo);
-            this.panelnomina.Controls.Add(this.button1);
-            this.panelnomina.Controls.Add(this.dateTimePicker1);
-            this.panelnomina.Controls.Add(this.label2);
-            this.panelnomina.Controls.Add(this.CBXempresa);
-            this.panelnomina.Controls.Add(this.label1);
-            this.panelnomina.Location = new System.Drawing.Point(85, 0);
+            this.panelnomina.Location = new System.Drawing.Point(85, 51);
             this.panelnomina.Name = "panelnomina";
-            this.panelnomina.Size = new System.Drawing.Size(943, 407);
+            this.panelnomina.Size = new System.Drawing.Size(943, 367);
             this.panelnomina.TabIndex = 1;
             // 
             // DGVreporte
@@ -216,7 +258,7 @@
             this.Column53,
             this.Column54,
             this.Column55});
-            this.DGVreporte.Location = new System.Drawing.Point(15, 43);
+            this.DGVreporte.Location = new System.Drawing.Point(15, 3);
             this.DGVreporte.Name = "DGVreporte";
             this.DGVreporte.RowHeadersVisible = false;
             this.DGVreporte.Size = new System.Drawing.Size(915, 364);
@@ -500,7 +542,7 @@
             // BTNexpo
             // 
             this.BTNexpo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNexpo.Location = new System.Drawing.Point(760, 9);
+            this.BTNexpo.Location = new System.Drawing.Point(903, 8);
             this.BTNexpo.Name = "BTNexpo";
             this.BTNexpo.Size = new System.Drawing.Size(111, 23);
             this.BTNexpo.TabIndex = 6;
@@ -511,7 +553,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(673, 10);
+            this.button1.Location = new System.Drawing.Point(816, 8);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(81, 23);
             this.button1.TabIndex = 5;
@@ -521,7 +563,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(433, 9);
+            this.dateTimePicker1.Location = new System.Drawing.Point(552, 9);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(208, 20);
             this.dateTimePicker1.TabIndex = 4;
@@ -530,7 +572,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(378, 13);
+            this.label2.Location = new System.Drawing.Point(488, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 16);
             this.label2.TabIndex = 3;
@@ -550,7 +592,7 @@
             "MORGET QUINCENAL",
             "MORGET MENSUAL",
             "PEUGEOT"});
-            this.CBXempresa.Location = new System.Drawing.Point(169, 8);
+            this.CBXempresa.Location = new System.Drawing.Point(254, 8);
             this.CBXempresa.Name = "CBXempresa";
             this.CBXempresa.Size = new System.Drawing.Size(191, 21);
             this.CBXempresa.TabIndex = 1;
@@ -559,27 +601,316 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(97, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(151, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Seleccione la Empresa:";
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(100, 437);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(915, 13);
+            this.progressBar1.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(97, 421);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "exportar";
+            // 
+            // panelpeugeot
+            // 
+            this.panelpeugeot.Controls.Add(this.DGVpeugeot);
+            this.panelpeugeot.Location = new System.Drawing.Point(85, 51);
+            this.panelpeugeot.Name = "panelpeugeot";
+            this.panelpeugeot.Size = new System.Drawing.Size(952, 367);
+            this.panelpeugeot.TabIndex = 4;
+            // 
+            // DGVpeugeot
+            // 
+            this.DGVpeugeot.AllowUserToAddRows = false;
+            this.DGVpeugeot.AllowUserToDeleteRows = false;
+            this.DGVpeugeot.AllowUserToResizeColumns = false;
+            this.DGVpeugeot.AllowUserToResizeRows = false;
+            this.DGVpeugeot.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVpeugeot.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column56,
+            this.Column57,
+            this.Column58,
+            this.Column59,
+            this.Column60,
+            this.Column61,
+            this.Column62,
+            this.Column63,
+            this.Column64,
+            this.Column65,
+            this.Column66,
+            this.Column67,
+            this.Column68,
+            this.Column69,
+            this.Column70,
+            this.Column71,
+            this.Column72,
+            this.Column73,
+            this.Column74,
+            this.Column75,
+            this.Column76,
+            this.Column77,
+            this.Column78,
+            this.Column79,
+            this.Column80,
+            this.Column81,
+            this.Column82,
+            this.Column83,
+            this.Column84,
+            this.Column85,
+            this.Column86,
+            this.Column87,
+            this.Column88,
+            this.Column89,
+            this.Column90,
+            this.Column91,
+            this.Column92,
+            this.Column93,
+            this.Column94,
+            this.Column95});
+            this.DGVpeugeot.Location = new System.Drawing.Point(15, 3);
+            this.DGVpeugeot.Name = "DGVpeugeot";
+            this.DGVpeugeot.RowHeadersVisible = false;
+            this.DGVpeugeot.Size = new System.Drawing.Size(915, 361);
+            this.DGVpeugeot.TabIndex = 1;
+            // 
+            // Column56
+            // 
+            this.Column56.HeaderText = "Nombre";
+            this.Column56.Name = "Column56";
+            // 
+            // Column57
+            // 
+            this.Column57.HeaderText = "Cuota Diaria";
+            this.Column57.Name = "Column57";
+            // 
+            // Column58
+            // 
+            this.Column58.HeaderText = "Dias";
+            this.Column58.Name = "Column58";
+            // 
+            // Column59
+            // 
+            this.Column59.HeaderText = "Sueldo";
+            this.Column59.Name = "Column59";
+            // 
+            // Column60
+            // 
+            this.Column60.HeaderText = "Otros Ingresos";
+            this.Column60.Name = "Column60";
+            // 
+            // Column61
+            // 
+            this.Column61.HeaderText = "Fondo de Ahorro";
+            this.Column61.Name = "Column61";
+            // 
+            // Column62
+            // 
+            this.Column62.HeaderText = "Vacio";
+            this.Column62.Name = "Column62";
+            // 
+            // Column63
+            // 
+            this.Column63.HeaderText = "Vales de Despensa";
+            this.Column63.Name = "Column63";
+            // 
+            // Column64
+            // 
+            this.Column64.HeaderText = "Subsidio para el empleo";
+            this.Column64.Name = "Column64";
+            // 
+            // Column65
+            // 
+            this.Column65.HeaderText = "Total Percepciones";
+            this.Column65.Name = "Column65";
+            // 
+            // Column66
+            // 
+            this.Column66.HeaderText = "Retencion IMSS";
+            this.Column66.Name = "Column66";
+            // 
+            // Column67
+            // 
+            this.Column67.HeaderText = "Retencion ISR Sueldos";
+            this.Column67.Name = "Column67";
+            // 
+            // Column68
+            // 
+            this.Column68.HeaderText = "Vales de Despensa D";
+            this.Column68.Name = "Column68";
+            // 
+            // Column69
+            // 
+            this.Column69.HeaderText = "Fondo de Ahorro empleado";
+            this.Column69.Name = "Column69";
+            // 
+            // Column70
+            // 
+            this.Column70.HeaderText = "Fondo de ahorro patron";
+            this.Column70.Name = "Column70";
+            // 
+            // Column71
+            // 
+            this.Column71.HeaderText = "Amortizacion Infonavit";
+            this.Column71.Name = "Column71";
+            // 
+            // Column72
+            // 
+            this.Column72.HeaderText = "Total  Deducciones";
+            this.Column72.Name = "Column72";
+            // 
+            // Column73
+            // 
+            this.Column73.HeaderText = "Ingresos netos Sueldos";
+            this.Column73.Name = "Column73";
+            // 
+            // Column74
+            // 
+            this.Column74.HeaderText = "vacia";
+            this.Column74.Name = "Column74";
+            // 
+            // Column75
+            // 
+            this.Column75.HeaderText = "Aguinaldo 15 dias";
+            this.Column75.Name = "Column75";
+            // 
+            // Column76
+            // 
+            this.Column76.HeaderText = "Aguinaldo 30 dias";
+            this.Column76.Name = "Column76";
+            // 
+            // Column77
+            // 
+            this.Column77.HeaderText = "Prima Vacacional 25%";
+            this.Column77.Name = "Column77";
+            // 
+            // Column78
+            // 
+            this.Column78.HeaderText = "Prima Vacacional 70 %";
+            this.Column78.Name = "Column78";
+            // 
+            // Column79
+            // 
+            this.Column79.HeaderText = "Vales de Despensa 10%";
+            this.Column79.Name = "Column79";
+            // 
+            // Column80
+            // 
+            this.Column80.HeaderText = "Fondo de Ahorro 13 %";
+            this.Column80.Name = "Column80";
+            // 
+            // Column81
+            // 
+            this.Column81.HeaderText = "Total Prestaciones";
+            this.Column81.Name = "Column81";
+            // 
+            // Column82
+            // 
+            this.Column82.HeaderText = "vacia";
+            this.Column82.Name = "Column82";
+            // 
+            // Column83
+            // 
+            this.Column83.HeaderText = "Costo Social IMSS";
+            this.Column83.Name = "Column83";
+            // 
+            // Column84
+            // 
+            this.Column84.HeaderText = "Costo Social ISN";
+            this.Column84.Name = "Column84";
+            // 
+            // Column85
+            // 
+            this.Column85.HeaderText = "Vacia";
+            this.Column85.Name = "Column85";
+            // 
+            // Column86
+            // 
+            this.Column86.HeaderText = "Costo Patronal Mensual por persona";
+            this.Column86.Name = "Column86";
+            // 
+            // Column87
+            // 
+            this.Column87.HeaderText = "Costo Patronal Mensual por persona";
+            this.Column87.Name = "Column87";
+            // 
+            // Column88
+            // 
+            this.Column88.HeaderText = "Comision 14%";
+            this.Column88.Name = "Column88";
+            // 
+            // Column89
+            // 
+            this.Column89.HeaderText = "Vacia";
+            this.Column89.Name = "Column89";
+            // 
+            // Column90
+            // 
+            this.Column90.HeaderText = "SubTotal";
+            this.Column90.Name = "Column90";
+            // 
+            // Column91
+            // 
+            this.Column91.HeaderText = "IVA";
+            this.Column91.Name = "Column91";
+            // 
+            // Column92
+            // 
+            this.Column92.HeaderText = "Total";
+            this.Column92.Name = "Column92";
+            // 
+            // Column93
+            // 
+            this.Column93.HeaderText = "Vacia";
+            this.Column93.Name = "Column93";
+            // 
+            // Column94
+            // 
+            this.Column94.HeaderText = "Banco";
+            this.Column94.Name = "Column94";
+            // 
+            // Column95
+            // 
+            this.Column95.HeaderText = "Cuenta";
+            this.Column95.Name = "Column95";
+            // 
             // reporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1027, 407);
+            this.ClientSize = new System.Drawing.Size(1043, 465);
+            this.Controls.Add(this.panelpeugeot);
+            this.Controls.Add(this.BTNexpo);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.panelnomina);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.CBXempresa);
+            this.Controls.Add(this.label1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "reporte";
             this.Text = "reporte";
+            this.Load += new System.EventHandler(this.reporte_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panelnomina.ResumeLayout(false);
-            this.panelnomina.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVreporte)).EndInit();
+            this.panelpeugeot.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVpeugeot)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -654,5 +985,49 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column53;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column54;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column55;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panelpeugeot;
+        private System.Windows.Forms.DataGridView DGVpeugeot;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column56;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column57;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column58;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column59;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column60;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column61;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column62;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column63;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column64;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column65;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column66;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column67;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column68;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column69;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column70;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column71;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column72;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column73;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column74;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column75;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column76;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column77;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column78;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column79;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column80;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column81;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column82;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column83;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column84;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column85;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column86;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column87;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column88;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column89;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column90;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column91;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column92;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column93;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column94;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column95;
     }
 }
