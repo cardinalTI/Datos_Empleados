@@ -69,18 +69,18 @@
     <Compile Include="Menu_Principal.Designer.cs">
       <DependentUpon>Menu_Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="MRnomina.cs" />
+    <Compile Include="Reportes\MRnomina.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Datos_Empleados\AltaEmpleados\Vempleados.cs" />
-    <Compile Include="reporte.cs">
+    <Compile Include="Reportes\reporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="reporte.Designer.cs">
+    <Compile Include="Reportes\reporte.Designer.cs">
       <DependentUpon>reporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="rnomina.cs" />
-    <Compile Include="suanomina.cs" />
+    <Compile Include="Reportes\rnomina.cs" />
+    <Compile Include="Reportes\suanomina.cs" />
     <EmbeddedResource Include="Datos_Empleados\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,7 +97,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="reporte.resx">
+    <EmbeddedResource Include="Reportes\reporte.resx">
       <DependentUpon>reporte.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -124,9 +124,7 @@
     <None Include="Resources\empleado %281%29.png" />
     <None Include="Resources\empleado.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reportes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
